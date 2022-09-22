@@ -13,7 +13,10 @@ const App = () => {
 
 
   const [users, setUsers] = useState(usersData);
-
+  const [search, setNewSearch] = useState("");
+  const handleSearchChange = (e) => {
+      setNewSearch(e.target.value);
+  };
 
   const addUser = user => {
     user.id = users.length + 1;
@@ -66,7 +69,11 @@ const App = () => {
           )}
         </div>
         <div className="flex-large">
-          <h2>View users</h2>
+        <form class="d-flex">
+        <input class="form-control me-2" type="search" value={search} onChange={handleSearchChange} placeholder="Search the Employes" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Find the Employes</button>
+       </form>
+          <h2>View Employes Detail </h2>
           <UserTable users={users} deleteUser={deleteUser} editRow={editRow} />
         </div>
       </div>
