@@ -15,6 +15,7 @@ const App = () => {
   const [users, setUsers] = useState(usersData);
   const [search, setNewSearch] = useState("");
   const handleSearchChange = (e) => {
+    e.preventDefault();
     console.log("hhhhhhh")
       setNewSearch(e.target.value);
   };
