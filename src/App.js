@@ -15,6 +15,7 @@ const App = () => {
   const [users, setUsers] = useState(usersData);
   const [search, setNewSearch] = useState("");
   const handleSearchChange = (e) => {
+    console.log("hhhhhhh")
       setNewSearch(e.target.value);
   };
 
@@ -53,7 +54,7 @@ const App = () => {
         <div className="flex-large">
           {editing ? (
             <div>
-              <h2>Eidt User</h2>
+              <h2>Edit User</h2>
               <EditUserForm
                 editing={editing}
                 setEditing={setEditing}
@@ -69,9 +70,9 @@ const App = () => {
           )}
         </div>
         <div className="flex-large">
-        <form class="d-flex">
-        <input class="form-control me-2" type="search" value={search} onChange={handleSearchChange} placeholder="Search the Employes" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Find the Employes</button>
+        <form className="d-flex">
+        <input className="form-control me-2" type="search" value={search} onChange={handleSearchChange} placeholder="Search the Employes" />
+        <button className="btn btn-outline-success" type="submit">Find the Employes</button>
        </form>
           <h2>View Employes Detail </h2>
           <UserTable users={users} deleteUser={deleteUser} editRow={editRow} />
